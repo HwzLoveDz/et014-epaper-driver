@@ -144,6 +144,6 @@ Host tests check emitted driver data, cleanup, drawing, and the demo plan. They 
 
 ## Sources and licensing
 
-This repository publishes project source, examples, and tests. The code license is yet to be finalized. Vendor waveform data, original vendor documents, and device backups are not included; their rights remain with their respective owners. See [SOURCES.md](SOURCES.md).
+Project-authored source, examples, tests, documentation, and showcase assets in this repository are released under the [MIT License](LICENSE). Vendor waveform data, original vendor documents, and device backups are not included; their rights remain with their respective owners. See [SOURCES.md](SOURCES.md).
 
 See [CHANGELOG.md](CHANGELOG.md) for version history. When reporting a problem, include the exact panel model, SDK version, refresh mode, temperature, and reproduction steps.

@@ -26,7 +26,7 @@ python tools/import_vendor_waveform.py "path/to/WaveformData.c"
 
 ## 许可
 
-项目代码许可证尚待确定。原厂资料和数据保留原始归属；当前没有可确认的独立开源授权，因此未将其纳入公开仓库，也未为其指定项目许可证。
+本仓库中由本项目创作并发布的文件采用 [MIT 许可证](LICENSE)。原厂资料和数据保留原始归属；当前没有可确认的独立开源授权，因此未将其纳入公开仓库，MIT 许可证也不适用于这些原厂资料。
 
 设备 Flash 备份、个人设备标识、私人工作目录和原厂压缩包不属于本仓库发布资料。
 
@@ -38,4 +38,4 @@ Vendor `WaveformData.c` contains ten temperature points and four modes: INIT, GC
 
 Vendor waveform headers, the vendor binary test fixture, original documents, and prebuilt firmware are excluded. Obtain authorized matching materials and run the local import command above before building or running waveform-dependent tests. Importing does not grant additional rights to use or redistribute those materials.
 
-The project code license is yet to be finalized. Vendor data retains its original ownership and is not covered by a project license. Device backups and private identifiers are also excluded.
+Project-authored files published in this repository are released under the [MIT License](LICENSE). Vendor data retains its original ownership and is not covered by the MIT License. Device backups and private identifiers are also excluded.
