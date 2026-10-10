@@ -2,6 +2,11 @@
 
 当前版本的使用方法见 [中文 README](README.md) / [English README](README.en.md)。
 
+## Unreleased — 波形随仓库提供
+
+- 收录本次测试样品使用的原始波形、生成头文件和测试 fixture；干净 clone 可直接运行主机测试及编译 ESP32-S3 示例。
+- 原厂波形未附独立开源许可证，明确将其排除在本项目 MIT 授权之外；来源与哈希见 [SOURCES.md](SOURCES.md)。
+
 ## 1.1.3 — 有限演示节奏调整
 
 - 12 步演示的计划停留时间由 80 秒降至 58.5 秒；刷新仍为 GC4 × 7、A2 × 5、GU4 × 0，首尾各执行一次 INIT。
@@ -30,4 +35,4 @@
 
 - 提供可移植 2bpp 核心、图形 API、ESP32-S3 端口、控制台、PC 工具和假 HAL 主机测试。
 
-Vendor waveform data and prebuilt firmware are not distributed in this repository; see [SOURCES.md](SOURCES.md).
+Prebuilt firmware is not distributed in this repository; see [SOURCES.md](SOURCES.md) for third-party waveform provenance and licensing status.

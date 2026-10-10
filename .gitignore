@@ -1,7 +1,3 @@
-# Supplier-owned inputs are generated locally and must not be published.
-/components/et014/src/et014_waveform_data.h
-/tests/fixtures/vendor-waveform.bin
-
 # Build, test and local editor state.
 /build-host/
 /examples/esp32s3/build/

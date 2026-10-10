@@ -252,7 +252,8 @@ static void test_failure_paths(void) {
       for(unsigned s=0;s<sizeof(stages)/sizeof(stages[0]);++s) {
         d=new_device(&f); f.fail_reg=5; f.fail_value=stages[s];
         assert_failed_safely(d,&f,ET014_ERR_IO); CHECK(f.faults==1);
-        for(unsigned i=0;i<f.power_count;++i) CHECK(f.power_values[i]<=stages[s]); close_device(d,&f);
+        for(unsigned i=0;i<f.power_count;++i) CHECK(f.power_values[i]<=stages[s]);
+        close_device(d,&f);
       }
     }
     d=new_device(&f); f.fail_packet=18;

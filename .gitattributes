@@ -2,3 +2,6 @@
 *.png binary
 *.gif binary
 *.bin binary
+
+# Preserve supplier bytes, including CRLF and generated trailing spaces.
+third_party/eink/GDEP014TT1/WaveformData.c -text whitespace=-blank-at-eol,-blank-at-eof

@@ -25,13 +25,13 @@ UTF-8 parsing and glyph callbacks allow an external Chinese font, but Chinese gl
 
 The ESP32-S3 port targets **ESP-IDF 5.5, 240 MHz, and exclusive SPI2 ownership**. It uses private SPI LL interfaces. Other SDK versions and MCUs require an adapted and validated HAL.
 
-Vendor temperature-dependent waveforms are not distributed in this repository. Obtain `WaveformData.c` from ET014TT1 / GDEP014TT1 vendor materials you are authorized to use, then import it from the repository root:
+The repository now contains the `WaveformData.c` used on the tested sample, its generated header, and the test fixture. A fresh clone can run host tests, and the ESP32-S3 example can be built with ESP-IDF 5.5. To verify or regenerate the inputs from the repository root:
 
 ```sh
-python tools/import_vendor_waveform.py "path/to/WaveformData.c"
+python tools/import_vendor_waveform.py
 ```
 
-Import the data before building or running waveform-dependent tests. See [Sources](SOURCES.md). Do not substitute a LUT from another panel model.
+The waveform came from an E Ink SW-TCON example supplied with the display. Its source file has no separate open-source license; it is **outside this project's MIT license**, and its public redistribution rights have not been verified. See [Sources](SOURCES.md) for provenance and hashes. Do not substitute a LUT from another panel model or assume this waveform suits every production lot.
 
 ### Default wiring
 
@@ -54,7 +54,7 @@ The default reference VCOM is **−2960 mV**, taken from the vendor main example
 
 ## Build and first run
 
-Open a configured ESP-IDF 5.5 shell and import the vendor waveforms first:
+Open a configured ESP-IDF 5.5 shell:
 
 ```sh
 cd examples/esp32s3
@@ -133,7 +133,7 @@ tests/                    Fake HAL, waveform, graphics, and PC tool tests
 docs/SHOWCASE.md          Demo sequence and previews
 ```
 
-After importing vendor data, run these commands with Python and a C compiler available:
+With Python and a C compiler available, run:
 
 ```sh
 python tests/run-host-tests.py
@@ -144,6 +144,6 @@ Host tests check emitted driver data, cleanup, drawing, and the demo plan. They 
 
 ## Sources and licensing
 
-Project-authored source, examples, tests, documentation, and showcase assets in this repository are released under the [MIT License](LICENSE). Vendor waveform data, original vendor documents, and device backups are not included; their rights remain with their respective owners. See [SOURCES.md](SOURCES.md).
+Project-authored source, examples, tests, documentation, and showcase assets are released under the [MIT License](LICENSE). The bundled E Ink waveform and generated copies are separately identified third-party materials **outside the MIT license**; see [SOURCES.md](SOURCES.md) for their licensing status. Other vendor documents and device backups are excluded.
 
 See [CHANGELOG.md](CHANGELOG.md) for version history. When reporting a problem, include the exact panel model, SDK version, refresh mode, temperature, and reproduction steps.

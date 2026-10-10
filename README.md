@@ -25,13 +25,13 @@ UTF-8 解析和字形回调可用于外接中文字库，仓库没有内置中�
 
 当前 ESP32-S3 端口针对 **ESP-IDF 5.5、240 MHz、SPI2 独占总线**实现，使用私有 SPI LL 接口。其他 SDK 版本和 MCU 需要适配并验证自己的 HAL。
 
-原厂温区波形没有随仓库发布。请从你有权使用的 ET014TT1 / GDEP014TT1 原厂资料取得 `WaveformData.c`，在仓库根目录导入：
+仓库已包含本次样品使用的 `WaveformData.c`、生成的头文件和测试数据。clone 后可直接运行主机测试；配置 ESP-IDF 5.5 后可直接编译 ESP32-S3 示例。需要核对或重新生成数据时，在仓库根目录运行：
 
 ```sh
-python tools/import_vendor_waveform.py "path/to/WaveformData.c"
+python tools/import_vendor_waveform.py
 ```
 
-导入后再构建和运行需要波形的测试；详见 [来源说明](SOURCES.md)。不要用其他型号屏幕的 LUT 替代。
+这份波形来自随屏幕提供的 E Ink SW-TCON 示例，原文件没有附独立开源许可证；它**不属于本项目的 MIT 授权范围**，公开再分发权尚未核实。文件来源和校验值见 [来源说明](SOURCES.md)。不要用其他型号屏幕的 LUT 替代，也不要把这份波形视为对不同批次屏幕的适用保证。
 
 ### 默认接线
 
@@ -54,7 +54,7 @@ UART0 使用 GPIO43 / 44，也可以通过原生 USB Serial/JTAG 控制台操作
 
 ## 编译与首次运行
 
-先进入已配置 ESP-IDF 5.5 的终端，并完成波形导入：
+进入已配置 ESP-IDF 5.5 的终端：
 
 ```sh
 cd examples/esp32s3
@@ -133,7 +133,7 @@ tests/                    假 HAL、波形核对、绘图与 PC 工具测试
 docs/SHOWCASE.md          演示步骤与预览
 ```
 
-导入原厂波形后，在有 C 编译器和 Python 的环境执行：
+在有 C 编译器和 Python 的环境执行：
 
 ```sh
 python tests/run-host-tests.py
@@ -144,6 +144,6 @@ python tests/test_hosttool.py
 
 ## 来源与许可
 
-本仓库中由本项目创作并发布的源码、示例、测试、文档和演示素材采用 [MIT 许可证](LICENSE)。原厂波形数据、原厂资料及设备备份不包含在仓库内，其权利仍属于各自原权利人。详见 [SOURCES.md](SOURCES.md)。
+本项目原创源码、示例、测试、文档和演示素材采用 [MIT 许可证](LICENSE)。仓库内的 E Ink 波形及由其生成的文件是单独标识的第三方资料，**不适用 MIT 许可证**；原始授权状态见 [SOURCES.md](SOURCES.md)。其他原厂资料和设备备份未收录。
 
 版本变化见 [CHANGELOG.md](CHANGELOG.md)。反馈请附屏幕完整型号、SDK 版本、刷新模式、温度和可复现步骤。
