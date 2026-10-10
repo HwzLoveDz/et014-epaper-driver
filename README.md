@@ -54,7 +54,7 @@ UART0 使用 GPIO43 / 44，也可以通过原生 USB Serial/JTAG 控制台操作
 
 ## 编译与首次运行
 
-进入已配置 ESP-IDF 5.5 的终端：
+Windows 下建议将仓库克隆到短路径，例如 `C:\src\et014`；ESP-IDF 的 CMake 目标文件路径在较深目录中可能超过 Windows 限制。进入已配置 ESP-IDF 5.5 的终端：
 
 ```sh
 cd examples/esp32s3

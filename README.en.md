@@ -54,7 +54,7 @@ The default reference VCOM is **−2960 mV**, taken from the vendor main example
 
 ## Build and first run
 
-Open a configured ESP-IDF 5.5 shell:
+On Windows, clone to a short path such as `C:\src\et014`; ESP-IDF CMake object paths can exceed Windows limits in deeply nested directories. Open a configured ESP-IDF 5.5 shell:
 
 ```sh
 cd examples/esp32s3
