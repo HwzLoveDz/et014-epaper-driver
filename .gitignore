@@ -1,0 +1,17 @@
+# Supplier-owned inputs are generated locally and must not be published.
+/components/et014/src/et014_waveform_data.h
+/tests/fixtures/vendor-waveform.bin
+
+# Build, test and local editor state.
+/build-host/
+/examples/esp32s3/build/
+/examples/esp32s3/sdkconfig
+/examples/esp32s3/sdkconfig.old
+/reports/showcase/*.pgm
+/reports/showcase/*-native.png
+/reports/showcase/*-landscape.png
+/reports/showcase/host-test-report.json
+__pycache__/
+*.pyc
+*.elf
+*.map
